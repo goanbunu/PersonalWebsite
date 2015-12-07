@@ -102,6 +102,7 @@ a:visited {
 }
 .og-fullimg {
     width: 60%;
+    overflow: auto;
 }
 .og-fullimg img {
     max-height: initial;

@@ -507,6 +507,29 @@ $(function() {
             // expand preview overlay
             preview.open();
 
+            //altered to allow scrolling of the images
+            //while they are scrolling, the window scrollbar is freezed
+            var panel =  $(".og-fullimg");
+            var doc = $(document);
+            var currentScroll;
+            function resetScroll(){
+              doc.scrollTop(currentScroll);
+            }
+            function stopDocScroll(){
+              currentScroll = doc.scrollTop();
+              doc.on('scroll', resetScroll);
+            }
+            function releaseDocScroll(){
+              doc.off('scroll', resetScroll);
+            }
+
+            panel.on('mouseenter', function(){
+              stopDocScroll();
+            });
+            panel.on('mouseleave', function(){
+              releaseDocScroll();
+            });
+
         }
 
         function hidePreview() {
