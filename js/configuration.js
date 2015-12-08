@@ -1,3 +1,10 @@
+
+                    // 'images/thumbs/accounts_resume_thumb.png',
+                    // 'images/thumbs/accounts_resume_thumb.png',
+                    // 'images/thumbs/accounts_resume_thumb.png',
+                    // 'images/thumbs/accounts_resume_thumb.png',
+                    // 'images/thumbs/accounts_resume_thumb.png',
+                    // 'images/thumbs/accounts_resume_thumb.png',
 $(function(){
     var viewportHeight = $(window).height();
     $("#portfolio").elastic_grid({
@@ -8,12 +15,12 @@ $(function(){
                 'title'         : 'Simply Hired Accounts Pages',
                 'description'   : '<ul><li>Simply Hired user accounts allow people to upload/edit their resume, save/apply to jobs, and more.</li><li>Content is responsive and dynamically rendered to ensure a positive UX.</li><li>Built with Backbone.js, Handlebars, Sass, and Django REST Framework.</li><li>Promoted 2 levels to software engineer because of successful leadership of the front end development of the user accounts pages.</li></ul>',
                 'thumbnail'     : [
-                    'images/thumbs/1.jpg',
-                    'images/thumbs/2.jpg',
-                    'images/thumbs/3.jpg',
-                    'images/thumbs/4.jpg',
-                    'images/thumbs/5.jpg',
-                    'images/thumbs/6.jpg'
+                    'images/screenshots/accounts_resume.png',
+                    'images/screenshots/accounts_editresume.png',
+                    'images/screenshots/accounts_resumeupload.png',
+                    'images/screenshots/accounts_savedjobs.png',
+                    'images/screenshots/accounts_resumemobile.png',
+                    'images/screenshots/accounts_mobilemenu.png'
                 ],
                 'large'         : [
                     'images/screenshots/accounts_resume.png',
@@ -30,24 +37,18 @@ $(function(){
                 'title'         : 'Face-enhancing app using OpenCV',
                 'description'   : 'Description text here',
                 'thumbnail'     : [
-                    'images/thumbs/1.jpg',
-                    'images/thumbs/2.jpg',
-                    'images/thumbs/3.jpg',
-                    'images/thumbs/4.jpg',
-                    'images/thumbs/5.jpg',
-                    'images/thumbs/6.jpg'
+                    'images/thumbs/opencv_process_thumb.png',
+                    'images/thumbs/opencv_decorate_thumb.png',
+                    'images/thumbs/opencv_homepage_thumb.png',
                 ],
                 'large'         : [
-                    'images/screenshots/accounts_resume.png',
-                    'images/screenshots/accounts_editresume.png',
-                    'images/screenshots/accounts_resumeupload.png',
-                    'images/screenshots/accounts_savedjobs.png',
-                    'images/screenshots/accounts_resumemobile.png',
-                    'images/screenshots/accounts_mobilemenu.png'
+                    'images/screenshots/opencv_process.png',
+                    'images/screenshots/opencv_decorate.png',
+                    'images/screenshots/opencv_homepage.png',
                 ],
                 'button_list'   :
                 [
-                    { 'title':'Download', 'url':'http://porfolio.bonchen.net/'}
+                    { 'title':'Download', 'url':'https://github.com/larissam/DecorateIt'}
                 ],
                 'tags'          : []
             },
