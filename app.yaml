@@ -4,7 +4,7 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /(.*\.(gif|png|jpg|ico|js|css))
+- url: /(.*\.(pdf|gif|png|jpg|ico|js|css))
   static_files: \1
   upload: (.*\.(gif|png|jpg|ico|js|css))
 
