@@ -14,14 +14,17 @@ h2 {
     color: #1A237E;
     margin-bottom: 45px;
 }
+h3 {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    text-align: center;
+}
 .header-icon {
-    width: 45px;
     margin-right: 25px;
-    float: left;
-    overflow: hidden;
+    width: 45px;
 }
 ul {
-    margin-left: 90px;
+    margin-left: 0;
 }
 ul ul {
     margin-left: 20px;
@@ -144,4 +147,18 @@ a:visited {
 }
 .link-button:hover{
     text-decoration: none !important;
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    h3 {
+        text-align: left;
+    }
+    ul {
+        margin-left: 90px;
+    }
+    .header-icon {
+        bottom: 10px;
+        float: left;
+        position: relative;
+    }
 }
