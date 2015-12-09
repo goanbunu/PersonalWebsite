@@ -454,8 +454,11 @@ $(function() {
                 hidePreview();
                 return false;
             } ).children( 'a' ).on( 'click', function(e) {
+                // console.log("what is e", e);
+                // console.log("what is e pageX", e.pageX);
+                // console.log("what is e pageX", e.pageY);
                 var $item = $( this ).parent();
-                //$(this).addClass('unhoverdir');
+                // $(this).addClass('unhoverdir');
                 //remove animate class
                 $item.removeClass('animate');
 
@@ -536,7 +539,8 @@ $(function() {
             //hide pointer
             $items.find('.og-pointer').remove();
 
-            current = -1;
+            // var id = $('.og-expanded').data('id');
+            // var selector = '[data-return$="' + id + '"]';
             var preview = $.data( this, 'preview' );
 
             if(typeof preview == "undefined"){
@@ -545,6 +549,11 @@ $(function() {
                 preview.close();
             }
             $.removeData( this, 'preview' );
+            // if($(selector)[0]) {
+            //     var clickedElCoordinates = $(selector)[0].getBoundingClientRect();
+            //     window.scrollTo(clickedElCoordinates.top, clickedElCoordinates.left);
+            //     $(selector).removeAttr("data-return");
+            // }
         }
 
         // the preview obj / overlay
