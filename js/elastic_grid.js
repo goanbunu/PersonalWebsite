@@ -690,8 +690,6 @@ $(function() {
                 //altered to allow scrolling of the images
                 //while they are scrolling, the window scrollbar is freezed
                 var panel =  $(".og-fullimg");
-                console.log("panel scrollheight: ", panel.get(0).scrollHeight);
-                console.log("panel height: ", panel.height());
                     var doc = $(document);
                     var currentScroll;
                     function resetScroll(){
@@ -706,7 +704,6 @@ $(function() {
                     }
 
                     panel.on('mouseenter', function(){
-                        console.log("on mousenter");
                         if (panel[0].scrollHeight > panel.height()){
                          stopDocScroll();
                         } else {
