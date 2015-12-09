@@ -1,4 +1,7 @@
 /* app styles  */
+html {
+    overflow-y: scroll;
+}
 body {
     background-color: #fafafa;
     font-family: 'Roboto', sans-serif;
@@ -32,6 +35,7 @@ ul ul {
 strong {
     font-weight: 700;
     font-size: 120%;
+    color: #1A237E;
 }
 em {
     margin-right: 5px;
@@ -72,6 +76,7 @@ a:focus {
 }
 a:hover {
     color: #FF4081;
+    cursor: pointer;
     /* text-decoration: none; */
 }
 a:visited {
@@ -126,8 +131,8 @@ a:visited {
     text-decoration: none;
 }
 .og-grid li>a img {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     object-fit: cover;
 }
 .elastislide-horizontal ul li {
@@ -136,8 +141,13 @@ a:visited {
 .elastislide-carousel ul li a img {
     max-height: 150px;
     max-width: 150px;
+    opacity: 0.4;
 }
-.related_photo {
+.elastislide-carousel ul li a img.selected {
+    opacity: 1;
+}
+.elastislide-carousel ul li a img:hover {
+    opacity: 1;
 }
 .link-button{
     background-color: #1A237E !important;
@@ -148,7 +158,31 @@ a:visited {
 .link-button:hover{
     text-decoration: none !important;
 }
-/* Medium devices (desktops, 992px and up) */
+
+/* force scrollbars to always appear */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 8px;
+}
+/* Medium+ devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     h3 {
         text-align: left;
@@ -156,9 +190,60 @@ a:visited {
     ul {
         margin-left: 90px;
     }
+    .row-fluid, .col-md-6 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        flex: 1 0 auto;
+    }
     .header-icon {
         bottom: 10px;
         float: left;
         position: relative;
+    }
+}
+
+/* Fixes for the project gallery */
+@media (min-width: 480px) {
+    .og-grid li>a img {
+        height: 250px;
+        width: 250px;
+    }
+}
+@media (max-width: 992px) {
+    .og-fullimg {
+        width: 100%;
+        margin-top: 50px;
+        height: calc(100vh - 400px);
+    }
+    .og-details {
+        width: 100%;
+    }
+    .og-expander h3 {
+        margin-top: 15px;
+    }
+    .og-expander .buttons-list {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .og-details p {
+        display: none;
+    }
+    .elastislide-carousel ul li a img {
+        max-height: 100px;
+        max-width: 100px;
+    }
+}
+@media (min-width: 950px) and (max-width:1230px) {
+    .og-grid li:nth-child(odd) {
+        margin-left: 130px;
+    }
+    .og-grid li:nth-child(even) {
+        margin-right: 130px;
+    }
+    .og-details li {
+        margin-left: initial !important;
+        margin-right: initial !important;
     }
 }

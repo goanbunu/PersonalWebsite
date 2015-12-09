@@ -87,14 +87,13 @@
                         <li>Hackbright Academy (acceptance rate: ~5%)</li>
                             <ul>
                                 <li>Highly-competitive 12 week software development course</li>
-                                <li>Explored <strong>computer vision and image processing</strong> in capstone project</li>
+                                <li>Explored <strong><a onclick="launchGallery($(this))" data-imageid="1">computer vision and image processing</a></strong> in capstone project</li>
                             </ul>
                     </ul>
                     <h3><img class="header-icon" src="images/icons/teaching.png"/>Teaching</h3>
                     <ul>
                       <li>Stanford Psychology <strong>Teaching Fellow</strong>. Taught 2 weekly classes of 20 students.</li>
                       <li>Worked with students to design research protocols, providing feedback to make their studies more robust.</li>
-                      <!-- <li>SAT Prep Instructor</li> -->
                     </ul>
                 </div>
             </div>
@@ -103,7 +102,7 @@
                     <h2>Industry Experience</h2>
                     <h3><img class="header-icon" src="images/icons/software.png"/>Software Engineer at Simply Hired</h3>
                     <ul>
-                      <li><strong>Led the front end development</strong> for the user accounts pages using JavaScript (Backbone.js), Sass/CSS, and HTML</li>
+                      <li><strong><a onclick="launchGallery($(this))" data-imageid="0">Led the front end development</a></strong> for the user accounts pages using JavaScript (Backbone.js), Sass/CSS, and HTML</li>
                         <li>Made the design responsive so it displays cleanly on mobile, tablets, and desktops</li>
                         <li>Helped build a RESTful API to provide the user accounts data using Python, Django, and Django REST Framework</li>
                         <li>Ensured the new design adapts to Canadian French but is also easily extendable for future internationalization initiatives</li>
@@ -114,7 +113,7 @@
                       <li>Worked in web development at Stanford for <strong>4 years</strong></li>
                       <li>Spearheaded initiatives to make the <a href="http://admission.stanford.edu/" target="_blank">Undergraduate Admissions</a>, <a href="http://visit.stanford.edu/" target="_blank">Visitor Information</a>, and <a href="http://financialaid.stanford.edu/" target="_blank">Financial Aid Office</a> sites accessible by W3C standards</li>
                         <li>Rebuilt the Undergraduate Admissions website to made it responsive using JavaScript, Bootstrap, HTML, and CSS</li>
-                        <li>Engineered and stylized an <a onclick="test($(this))" data-id="1">interactive campus map</a> for the Visitor Information website using JavaScript, HTML, and Photoshop. Consulted 4 executives in the Maps and Records department to ensure the map’s accuracy and user-friendliness.</li>
+                        <li>Engineered and stylized an <a onclick="launchGallery($(this))" data-imageid="2">interactive campus map</a> for the Visitor Information website using JavaScript, HTML, and Photoshop. Consulted 4 executives in the Maps and Records department to ensure the map’s accuracy and user-friendliness.</li>
                         <li>Contributed to major widgets on the site, including the the <a href="http://engage.stanford.edu/" target="_blank">Admissions Blog</a> and the <a href="http://admission.stanford.edu/student/diversity/" target="_blank">Diversity Pages</a></li>
                     </ul>
                 </div>
@@ -136,8 +135,8 @@
 
     <!-- JavaScript
     ================================================== -->
-    <!-- <script src="js/jquery.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.js"></script> -->
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
@@ -147,9 +146,10 @@
     <script type="text/javascript" src="js/elastic_grid.js"></script>
     <script type="text/javascript" src="js/configuration.js"></script>
     <script>
-                console.log("test loaded");
-            function test(caller){
-                console.log("in test");
+            function launchGallery(caller){
+                var selector = '[data-id$="' + caller.data('imageid') + '"] a';
+                caller.attr("data-return", caller.data('imageid').toString());
+                $(selector).click();
             }
     </script>
 

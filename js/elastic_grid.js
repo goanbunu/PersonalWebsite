@@ -454,9 +454,6 @@ $(function() {
                 hidePreview();
                 return false;
             } ).children( 'a' ).on( 'click', function(e) {
-                // console.log("what is e", e);
-                // console.log("what is e pageX", e.pageX);
-                // console.log("what is e pageX", e.pageY);
                 var $item = $( this ).parent();
                 // $(this).addClass('unhoverdir');
                 //remove animate class
@@ -510,28 +507,7 @@ $(function() {
             // expand preview overlay
             preview.open();
 
-            //altered to allow scrolling of the images
-            //while they are scrolling, the window scrollbar is freezed
-            var panel =  $(".og-fullimg");
-            var doc = $(document);
-            var currentScroll;
-            function resetScroll(){
-              doc.scrollTop(currentScroll);
-            }
-            function stopDocScroll(){
-              currentScroll = doc.scrollTop();
-              doc.on('scroll', resetScroll);
-            }
-            function releaseDocScroll(){
-              doc.off('scroll', resetScroll);
-            }
-
-            panel.on('mouseenter', function(){
-              stopDocScroll();
-            });
-            panel.on('mouseleave', function(){
-              releaseDocScroll();
-            });
+            
 
         }
 
@@ -539,8 +515,9 @@ $(function() {
             //hide pointer
             $items.find('.og-pointer').remove();
 
-            // var id = $('.og-expanded').data('id');
-            // var selector = '[data-return$="' + id + '"]';
+            var id = $('.og-expanded').data('id');
+            var selector = '[data-return$="' + id + '"]';
+            current = -1;
             var preview = $.data( this, 'preview' );
 
             if(typeof preview == "undefined"){
@@ -549,11 +526,11 @@ $(function() {
                 preview.close();
             }
             $.removeData( this, 'preview' );
-            // if($(selector)[0]) {
-            //     var clickedElCoordinates = $(selector)[0].getBoundingClientRect();
-            //     window.scrollTo(clickedElCoordinates.top, clickedElCoordinates.left);
-            //     $(selector).removeAttr("data-return");
-            // }
+            if($(selector)[0]) {
+                var clickedElCoordinates = $(selector)[0].getBoundingClientRect();
+                window.scrollTo(clickedElCoordinates.left + window.scrollX + clickedElCoordinates.width, clickedElCoordinates.top + window.scrollY );
+                $(selector).removeAttr("data-return");
+            }
         }
 
         // the preview obj / overlay
@@ -710,6 +687,36 @@ $(function() {
                     this.positionPreview();
                 }, this ), 25 );
 
+                //altered to allow scrolling of the images
+                //while they are scrolling, the window scrollbar is freezed
+                var panel =  $(".og-fullimg");
+                console.log("panel scrollheight: ", panel.get(0).scrollHeight);
+                console.log("panel height: ", panel.height());
+                    var doc = $(document);
+                    var currentScroll;
+                    function resetScroll(){
+                      doc.scrollTop(currentScroll);
+                    }
+                    function stopDocScroll(){
+                      currentScroll = doc.scrollTop();
+                      doc.on('scroll', resetScroll);
+                    }
+                    function releaseDocScroll(){
+                      doc.off('scroll', resetScroll);
+                    }
+
+                    panel.on('mouseenter', function(){
+                        console.log("on mousenter");
+                        if (panel[0].scrollHeight > panel.height()){
+                         stopDocScroll();
+                        } else {
+                          releaseDocScroll();
+                        }
+                    });
+                    panel.on('mouseleave', function(){
+                      releaseDocScroll();
+                    });
+
             },
             close : function() {
 
@@ -788,6 +795,7 @@ $(function() {
                     scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
 
                 $body.animate( { scrollTop : scrollVal }, settings.speed );
+
 
             },
             setTransition  : function() {

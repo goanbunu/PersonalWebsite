@@ -7,13 +7,16 @@
                     // 'images/thumbs/accounts_resume_thumb.png',
 $(function(){
     var viewportHeight = $(window).height();
+    $( window ).resize(function() {
+        viewportHeight = $(window).height();
+    });
     $("#portfolio").elastic_grid({
         'expandingHeight' : viewportHeight,
         'items' :
         [
             {
                 'title'         : 'Simply Hired Accounts Pages',
-                'description'   : '<ul><li>Simply Hired user accounts allow people to upload/edit their resume, save/apply to jobs, and more.</li> \
+                'description'   : '<ul><li>Simply Hired user accounts allow people to upload/edit their resume, save/apply to jobs, manage saved searches, and sign up for email alerts.</li> \
                 <li>Content is responsive and dynamically rendered to ensure a positive UX.</li><li>Built with Backbone.js, Handlebars, Sass, and Django REST Framework.</li></ul>',
                 'thumbnail'     : [
                     'images/screenshots/accounts_savedjobs.png',
@@ -40,7 +43,9 @@ $(function(){
             },
             {
                 'title'         : 'Face-enhancing app using OpenCV',
-                'description'   : '<ul><li>DecorateIt is an image decorating application that uses OpenCV to automatically enhance eyes and smooth faces. Users can either take a photo with their webcam or upload a photo from disk. The system detects eyes using the Viola-Jones algorithm, and then increases them 20%, and pastes them back on the face. A bilateral filter is then used to smooth the entire face while perserving edges.</li> \
+                'description'   : '<ul> \
+                    <li>The system detects eyes using the Viola-Jones algorithm, scales them 20%, and pastes them back on the face. A transparency mask around the edges of the scaled eyes ensures they are less detectable when pasted back on. A bilateral filter is then used to smooth the entire face while perserving edges.</li> \
+                    <li>The decoration part of the app is built with JavaScript and HTML5 Canvas. The app detects the cursor position to position selected graphics on the image. When a user is done, they can download, save, or email the image.</li> \
                 <li>Built with OpenCV, JavaScript, HTML5 Canvas, Python, and Flask</li></ul>',
                 'thumbnail'     : [
                     'images/screenshots/opencv_thumb.png',
@@ -60,15 +65,15 @@ $(function(){
                 ],
                 'button_list'   :
                 [
-                    { 'title':'Download', 'url':'https://github.com/larissam/DecorateIt'}
+                    { 'title':'View Source', 'url':'https://github.com/larissam/DecorateIt'}
                 ],
                 'tags'          : []
             },
             {
                 'title'         : 'Stanford Eateries Map',
                 'description'   : '<ul> \
-                <li>Stanford Eateries is on the Stanford Visitor Information site. It uses the Google Maps API to load customized information about places to eat on campus</li> \
-                  <li>Users can either click on the map directly or click an eatery name from the menu on the right</li> \
+                <li>On the Stanford Visitor Information site. Uses the Google Maps API to load customized information about places to eat on campus.</li> \
+                  <li>Users can either click on the map directly or click an eatery name from the menu on the right.</li> \
                   <li>Built with JavaScript, HTML, CSS, and Photoshop</li></ul>',
                 'thumbnail'     : [
                     'images/screenshots/diningmap_unselected.png',
@@ -105,7 +110,7 @@ $(function(){
                 ],
                 'button_list'   :
                 [
-                    { 'title':'Download', 'url':'https://github.com/larissam/Carousel-Backbone-Jasmine'}
+                    { 'title':'View Source', 'url':'https://github.com/larissam/Carousel-Backbone-Jasmine'}
                 ],
                 'tags'          : []
             }
