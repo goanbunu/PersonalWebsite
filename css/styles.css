@@ -3,7 +3,6 @@ html {
     overflow-y: scroll;
 }
 body {
-    background-color: #fafafa;
     font-family: 'Roboto', sans-serif;
     color: #212121;
 }
@@ -39,6 +38,9 @@ strong {
 }
 em {
     margin-right: 5px;
+}
+.container-fluid {
+    background-color: #ffffff;
 }
 .container-image {
     background-color: #1976D2;
@@ -92,17 +94,6 @@ a:visited {
     height: 20px;
     vertical-align: bottom;
 }
-.card {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.2s ease-in-out;
-    background-color: white;
-    padding: 10px 30px;
-    margin: 20px;
-}
-.card:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
 /* overrides */
 /* hidden filters */
 .wagwep-container{
@@ -197,10 +188,23 @@ a:visited {
         display: flex;
         flex: 1 0 auto;
     }
+    .container-fluid {
+        background-color: #fafafa;
+    }
     .header-icon {
         bottom: 10px;
         float: left;
         position: relative;
+    }
+    .card {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.2s ease-in-out;
+        background-color: white;
+        padding: 10px 30px;
+        margin: 20px;
+    }
+    .card:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     }
 }
 
