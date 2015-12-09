@@ -1,10 +1,3 @@
-
-                    // 'images/thumbs/accounts_resume_thumb.png',
-                    // 'images/thumbs/accounts_resume_thumb.png',
-                    // 'images/thumbs/accounts_resume_thumb.png',
-                    // 'images/thumbs/accounts_resume_thumb.png',
-                    // 'images/thumbs/accounts_resume_thumb.png',
-                    // 'images/thumbs/accounts_resume_thumb.png',
 $(function(){
     var viewportHeight = $(window).height();
     $( window ).resize(function() {

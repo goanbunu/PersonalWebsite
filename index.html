@@ -38,7 +38,7 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="css/elastic_grid.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css" />
   </head>
 
   <body>
@@ -155,21 +155,20 @@
     <!-- JavaScript
     ================================================== -->
     <script src="js/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.js"></script> -->
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/jquery.elastislide.js"></script>
-    <script src="js/jquery.hoverdir.js"></script>
-    <script type="text/javascript" src="js/elastic_grid.js"></script>
-    <script type="text/javascript" src="js/configuration.js"></script>
+    <script src="js/classie.min.js"></script>
+    <script src="js/jquery.elastislide.min.js"></script>
+    <script src="js/jquery.hoverdir.min.js"></script>
+    <script type="text/javascript" src="js/elastic_grid_custom.min.js"></script>
+    <script type="text/javascript" src="js/configuration.min.js"></script>
     <script>
-            function launchGallery(caller){
-                var selector = '[data-id$="' + caller.data('imageid') + '"] a';
-                caller.attr("data-return", caller.data('imageid').toString());
-                $(selector).click();
-            }
+        function launchGallery(caller){
+            var selector = '[data-id$="' + caller.data('imageid') + '"] a';
+            caller.attr("data-return", caller.data('imageid').toString());
+            $(selector).click();
+        }
     </script>
 
   </body>
