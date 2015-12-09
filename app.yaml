@@ -3,13 +3,18 @@ version: 1
 runtime: python
 api_version: 1
 
-default_expiration: "4d 5h"
+default_expiration: "0d 1m"
 
 handlers:
-- url: /(.*\.(pdf|gif|png|jpg|ico|js|css))
+- url: /images/(.*\.(gif|png|jpg|ico))
+  static_files: images/\1
+  upload: (.*\.(gif|png|jpg|ico))
+  expiration: "0d 10m"
+
+- url: /(.*\.(pdf|js|css))
   static_files: \1
-  upload: (.*\.(pdf|gif|png|jpg|ico|js|css))
-  expiration: "4d 5h"
+  upload: (.*\.(pdf|js|css))
+  expiration: "0d 5m"
 
 - url: /robots.txt
   static_files: robots.txt
