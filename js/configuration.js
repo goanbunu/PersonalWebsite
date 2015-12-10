@@ -12,9 +12,9 @@ $(function(){
                 'description'   : '<ul><li>Simply Hired user accounts allow people to upload/edit their resume, save/apply to jobs, manage saved searches, and sign up for email alerts.</li> \
                 <li>Content is responsive and dynamically rendered to ensure a positive UX.</li><li>Built with Backbone.js, Handlebars, Sass, and Django REST Framework.</li></ul>',
                 'thumbnail'     : [
-                    'images/thumbs/accounts_savedjobs.gif',
+                    'images/thumbs/accounts_savedjobs.jpg',
                     'images/thumbs/accounts_noresume.gif',
-                    'images/thumbs/accounts_resumeupload.gif',
+                    'images/thumbs/accounts_resumeupload.jpg',
                     'images/thumbs/accounts_resume.gif',
                     'images/thumbs/accounts_editresume.gif',
                     'images/thumbs/accounts_resumemobile.gif',
